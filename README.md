@@ -60,7 +60,7 @@ To run ShadowDumper, execute the compiled binary from the powershell.
   <img src="Assets/help.jpg" alt="Help Menu" width="600"/>
 </p>
 
-## 🔄 Upcoming Features
+## 🔄 Upcoming
 ```cpp
 - Defense Evasion Techniques: Add more advance defense evasion techniques.
 
