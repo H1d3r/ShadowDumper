@@ -23,6 +23,10 @@ Shadow Dumper is a powerful tool used to dump LSASS (Local Security Authority Su
 - Right click on ASM files and go to properties and make sure item type should be Microsoft Macro Assembler
 - Compile project
 
+> [!NOTE]
+> V1.0 Compatibility: Windows (x86-64) [tested with x64 build] on Windows 10 Version 22H2 (OS build 19045) with major 10.0
+(Note: You may face issues on latest releases in some methods, this can be due to version of mimikatz)
+
 ## ⛑️ Usage
 To run ShadowDumper, execute the compiled binary from the powershell.
 
