@@ -1,7 +1,9 @@
 # ShadowDumper
-Shadow Dumper is a powerful tool used to dump LSASS (Local Security Authority Subsystem Service) memory, often needed in penetration testing and red teaming activities. It offers flexible options to users and uses multiple advanced techniques to dump memory, allowing to access sensitive data in LSASS memory.   
+<p align="center">
+  <img src="ShadowDumper/Assets/main.jpg" alt="Help" width="600"/>
+</p>
 
-![photo](ShadowDumper/Assets/main.jpg)
+Shadow Dumper is a powerful tool used to dump LSASS (Local Security Authority Subsystem Service) memory, often needed in penetration testing and red teaming activities. It offers flexible options to users and uses multiple advanced techniques to dump memory, allowing to access sensitive data in LSASS memory.   
 
 
 > [!CAUTION]
@@ -25,7 +27,7 @@ Shadow Dumper is a powerful tool used to dump LSASS (Local Security Authority Su
 
 > [!NOTE]
 > V1.0 Compatibility: Windows (x64) [tested with x64 build] on Windows 10 Version 22H2 (OS build 19045) with major 10.0
-(Note: You may face issues on latest releases in some methods, this can be due to version of mimikatz)
+[You may face issues on latest releases in some methods, this can be due to version of mimikatz]
 
 ## ⛑️ Usage
 To run ShadowDumper, execute the compiled binary from the powershell.
