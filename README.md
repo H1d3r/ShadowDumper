@@ -1,7 +1,7 @@
 # ShadowDumper
 Shadow Dumper is a powerful tool used to dump LSASS (Local Security Authority Subsystem Service) memory, often needed in penetration testing and red teaming activities. It offers flexible options to users and uses multiple advanced techniques to dump memory, allowing to access sensitive data in LSASS memory.   
 
-![photo_2024-09-07_20-05-46](https://github.com//assets/main.jpg)
+![photo](https://github.com/Offensive-Panda/ShadowDumper/Assets/main.jpg)
 
 
 > [!CAUTION]
