@@ -1,7 +1,7 @@
 # ShadowDumper
 Shadow Dumper is a powerful tool used to dump LSASS (Local Security Authority Subsystem Service) memory, often needed in penetration testing and red teaming activities. It offers flexible options to users and uses multiple advanced techniques to dump memory, allowing to access sensitive data in LSASS memory.   
 
-![photo](https://github.com/Offensive-Panda/ShadowDumper/Assets/main.jpg)
+![photo](ShadowDumper/Assets/main.jpg)
 
 
 > [!CAUTION]
@@ -33,7 +33,7 @@ To run ShadowDumper, execute the compiled binary from the powershell.
 **Default Mode**
 - No Parameter Provided: Show the user friendly console with multiple options to execute
 <p align="center">
-  <img src="Assets/display.png" alt="Help" width="600"/>
+  <img src="ShadowDumper/Assets/display.png" alt="Help" width="600"/>
 </p>
 
 **CommandLine Mode**
@@ -61,13 +61,13 @@ To run ShadowDumper, execute the compiled binary from the powershell.
     - Parameter: 7:   To dump lsass memory using direct syscalls (native dump with needed streams for parsing offline)
 ```
 <p align="center">
-  <img src="Assets/help.jpg" alt="Help" width="600"/>
+  <img src="ShadowDumper/Assets/help.png" alt="Help" width="600"/>
 </p>
 
 ## 💫 Demonstration
 Demonstrates the working of ShadowDumper.
 
-![Demo](Assets/D.gif)
+![Demo](ShadowDumper/Assets/D.gif)
 
 ## 🔄 Upcoming
 ```cpp
