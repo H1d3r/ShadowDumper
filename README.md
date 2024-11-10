@@ -1,7 +1,7 @@
 # ShadowDumper
 Shadow Dumper is a powerful tool used to dump LSASS (Local Security Authority Subsystem Service) memory, often needed in penetration testing and red teaming activities. It offers flexible options to users and uses multiple advanced techniques to dump memory, allowing to access sensitive data in LSASS memory.   
 
-![photo_2024-09-07_20-05-46](https://github.com//assets/main.jpg)
+![photo](https://github.com/Offensive-Panda/ShadowDumper/Assets/main.jpg)
 
 
 > [!CAUTION]
@@ -22,6 +22,10 @@ Shadow Dumper is a powerful tool used to dump LSASS (Local Security Authority Su
 - Make sure MASM should be selected. [Right-click on your project in solution explorer, click build dependencies, click build customization and select .masm)
 - Right click on ASM files and go to properties and make sure item type should be Microsoft Macro Assembler
 - Compile project
+
+> [!NOTE]
+> V1.0 Compatibility: Windows (x86-64) [tested with x64 build] on Windows 10 Version 22H2 (OS build 19045) with major 10.0
+(Note: You may face issues on latest releases in some methods, this can be due to version of mimikatz)
 
 ## ⛑️ Usage
 To run ShadowDumper, execute the compiled binary from the powershell.
@@ -83,6 +87,6 @@ Have questions, ideas, or want to collaborate? Reach out to the [author](https:/
 
 ## 🙏 Acknowledgment
 - Took help in nativedump streams from the Project by **Florinel Olteanu** called [**NtDump**](https://github.com/florylsk/NtDump).
-- Injected modified mimikatz by **Benjamin DELPY** called [**NtDump**](https://github.com/gentilkiwi/mimikatz).
+- Injected modified mimikatz by **Benjamin DELPY** called [**Mimikatz**](https://github.com/gentilkiwi/mimikatz).
 
 
