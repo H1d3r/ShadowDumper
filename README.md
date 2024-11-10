@@ -87,6 +87,6 @@ Have questions, ideas, or want to collaborate? Reach out to the [author](https:/
 
 ## 🙏 Acknowledgment
 - Took help in nativedump streams from the Project by **Florinel Olteanu** called [**NtDump**](https://github.com/florylsk/NtDump).
-- Injected modified mimikatz by **Benjamin DELPY** called [**NtDump**](https://github.com/gentilkiwi/mimikatz).
+- Injected modified mimikatz by **Benjamin DELPY** called [**Mimikatz**](https://github.com/gentilkiwi/mimikatz).
 
 
