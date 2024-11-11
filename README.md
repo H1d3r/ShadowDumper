@@ -1,4 +1,4 @@
-# ShadowDumper 
+# ShadowDumper
 <p align="center">
   <img src="ShadowDumper/Assets/main.jpg" alt="Help" width="600"/>
 </p>
