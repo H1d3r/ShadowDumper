@@ -26,7 +26,7 @@ Shadow Dumper is a powerful tool used to dump LSASS (Local Security Authority Su
 - Compile project
 
 > [!NOTE]
-> V1.0 Compatibility: Windows (x64) [tested with x64 build] on Windows 10 Version 22H2 (OS build 19045) with major 10.0
+> V1.0 Compatibility: Windows (x64) [tested with x64 build] on Windows 10 Version 22H2 (OS build 19045.5073) with major 10.0
 [You may face issues on latest releases in some methods, this can be due to version of mimikatz]
 
 ## ⛑️ Usage
