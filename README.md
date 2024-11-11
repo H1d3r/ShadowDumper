@@ -21,7 +21,8 @@ Shadow Dumper is a powerful tool used to dump LSASS (Local Security Authority Su
 ## 🛠️ Build
 - Clone ShadowDumper repository
 - Open in Visual Studio 2019 (v142)
-- Make sure MASM should be selected. [Right-click on your project in solution explorer, click build dependencies, click build customization and select .masm)
+- C++ Language Standard ISO C++14 Standard or Higher
+- Make sure MASM should be selected. [Right-click on your project in solution explorer, click build dependencies, click build customization and select .masm]
 - Right click on ASM files and go to properties and make sure item type should be Microsoft Macro Assembler
 - Compile project
 
