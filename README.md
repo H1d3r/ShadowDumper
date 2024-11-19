@@ -34,13 +34,13 @@ Shadow Dumper is a powerful tool used to dump LSASS (Local Security Authority Su
 ## ⛑️ Usage
 To run ShadowDumper, execute the compiled binary from the powershell.
 
-**Default Mode**
+**Default Mode (V1.0)**
 - No Parameter Provided: Show the user friendly console with multiple options to execute
 <p align="center">
   <img src="ShadowDumper/Assets/display.png" alt="Help" width="600"/>
 </p>
 
-**CommandLine Mode**
+**CommandLine Mode (V1.0)**
 - Parameter: -h: Displays a help menu with all available options.
 ```cpp
   ShadowDumper.exe
@@ -69,7 +69,7 @@ To run ShadowDumper, execute the compiled binary from the powershell.
 </p>
 
 ## 💫 Demonstration
-Demonstrates the working of ShadowDumper.
+Demonstrates the working of ShadowDumper (V1.0).
 
 ![Demo](ShadowDumper/Assets/D.gif)
 
