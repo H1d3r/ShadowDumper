@@ -42,6 +42,10 @@ To run ShadowDumper, execute the compiled binary from the powershell.
 
 **CommandLine Mode (V1.0)**
 - Parameter: -h: Displays a help menu with all available options.
+<p align="center">
+  <img src="ShadowDumper/Assets/help.png" alt="Help" width="600"/>
+</p>
+
 ```cpp
   ShadowDumper.exe
     - Parameter: 1: To dump lsass memory using unhooking technique to inject modified mimikatz binary.
@@ -64,9 +68,7 @@ To run ShadowDumper, execute the compiled binary from the powershell.
   ShadowDumper.exe
     - Parameter: 7:   To dump lsass memory using direct syscalls (native dump with needed streams for parsing offline)
 ```
-<p align="center">
-  <img src="ShadowDumper/Assets/help.png" alt="Help" width="600"/>
-</p>
+
 
 ## 💫 Demonstration
 Demonstrates the working of ShadowDumper (V1.0).
