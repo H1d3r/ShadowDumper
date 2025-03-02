@@ -96,3 +96,16 @@ inline BOOL CALLBACK minidumpCallback(
 	}
 	return TRUE;
 }
+
+inline void Encrypt(void* DumpBuffer, int BytesRead)
+{
+	// Cast the void pointer to a BYTE pointer for byte-level manipulation
+	BYTE* buffer = reinterpret_cast<BYTE*>(DumpBuffer);
+
+	for (int i = 0; i < BytesRead; i++)  // Corrected to avoid off-by-one error
+	{
+		buffer[i] = buffer[i] ^ 0x9A1C;  // First XOR with 0x9A1C
+		buffer[i] = buffer[i] ^ 0x5B9C;  // Second XOR with 0x5B9C
+	}
+	printf("Successfully encrypted created dump before writing on disk.\n");
+}

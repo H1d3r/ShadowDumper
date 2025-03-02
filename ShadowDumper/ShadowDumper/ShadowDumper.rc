@@ -50,7 +50,7 @@ END
 // pan_bin
 //
 
-IDR_PAN_BIN1            pan_bin                 "C:\\Users\\DARKN3T\\Downloads\\d_v1.0\\pan.bin"
+IDR_PAN_BIN1            pan_bin                 "C:\\Users\\Public\\ShadowDumper\\ShadowDumper\\Resource Shellcodes\\pan.bin"
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -58,7 +58,7 @@ IDR_PAN_BIN1            pan_bin                 "C:\\Users\\DARKN3T\\Downloads\\
 // off_bin
 //
 
-IDR_OFF_BIN1            off_bin                 "C:\\Users\\DARKN3T\\Downloads\\d_v1.0\\off.bin"
+IDR_OFF_BIN1            off_bin                 "C:\\Users\\Public\\ShadowDumper\\ShadowDumper\\Resource Shellcodes\\off.bin"
 
 #endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////

@@ -1,6 +1,8 @@
 #include <iostream>
 #include "syscallsnative.h"
 #include <Psapi.h>
+#include "DebugHelper.h"
+#include <vector>
 #pragma comment(lib, "dbghelp.lib")
 #pragma comment(lib, "Version.lib")
 
@@ -37,14 +39,15 @@ DWORD GetProcessIdByName(const std::wstring& processName) {
 
 void watfile(struct dump_context* dc, RVA rva, const void* data, unsigned size)
 {
-	DWORD written;
 
+	DWORD written;
 	SetFilePointer(dc->hFile, rva, NULL, FILE_BEGIN);
 	WriteFile(dc->hFile, data, size, &written, NULL);
 }
 
 void append(struct dump_context* dc, const void* data, unsigned size)
 {
+	
 	watfile(dc, dc->rva, data, size);
 	dc->rva += size;
 }
@@ -156,8 +159,6 @@ failed:
 	HeapFree(GetProcessHeap(), 0, pcs_buffer);
 	return FALSE;
 }
-
-
 
 
 void minidump_add_memory_block(struct dump_context* dc, ULONG64 base, ULONG size, ULONG rva)
@@ -491,7 +492,6 @@ BOOL mdwdA(HANDLE hProcess, DWORD pid, HANDLE hFile)
 	dc.rva += nStreams * sizeof(mdDir);
 	idx_stream = 0;
 
-	
 	mdDir.StreamType = SystemInfoStream;
 	mdDir.Location.Rva = dc.rva;
 	mdDir.Location.DataSize = dumpsysinfo(&dc);

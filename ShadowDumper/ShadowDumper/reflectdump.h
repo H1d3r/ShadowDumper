@@ -17,7 +17,6 @@
 #define RTL_CLONE_PROCESS_FLAGS_NO_SYNCHRONIZE 0x00000004 // don't update synchronization objects
 #endif
 
-extern bool reflectDump();
 
 typedef struct {
     HANDLE UniqueProcess;

@@ -1,0 +1,9 @@
+C:\Users\Public\ShadowDumper\ShadowDumper\ShadowDumper\callbacksMDWD.cpp;C:\Users\Public\ShadowDumper\ShadowDumper\ShadowDumper\x64\Release\callbacksMDWD.obj
+C:\Users\Public\ShadowDumper\ShadowDumper\ShadowDumper\decrypt.cpp;C:\Users\Public\ShadowDumper\ShadowDumper\ShadowDumper\x64\Release\decrypt.obj
+C:\Users\Public\ShadowDumper\ShadowDumper\ShadowDumper\forkdump.cpp;C:\Users\Public\ShadowDumper\ShadowDumper\ShadowDumper\x64\Release\forkdump.obj
+C:\Users\Public\ShadowDumper\ShadowDumper\ShadowDumper\main.cpp;C:\Users\Public\ShadowDumper\ShadowDumper\ShadowDumper\x64\Release\main.obj
+C:\Users\Public\ShadowDumper\ShadowDumper\ShadowDumper\nativeDS.c;C:\Users\Public\ShadowDumper\ShadowDumper\ShadowDumper\x64\Release\nativeDS.obj
+C:\Users\Public\ShadowDumper\ShadowDumper\ShadowDumper\simpleMDWD.cpp;C:\Users\Public\ShadowDumper\ShadowDumper\ShadowDumper\x64\Release\simpleMDWD.obj
+C:\Users\Public\ShadowDumper\ShadowDumper\ShadowDumper\syscallsMDWD.cpp;C:\Users\Public\ShadowDumper\ShadowDumper\ShadowDumper\x64\Release\syscallsMDWD.obj
+C:\Users\Public\ShadowDumper\ShadowDumper\ShadowDumper\syscallsNative.cpp;C:\Users\Public\ShadowDumper\ShadowDumper\ShadowDumper\x64\Release\syscallsNative.obj
+C:\Users\Public\ShadowDumper\ShadowDumper\ShadowDumper\unhook.cpp;C:\Users\Public\ShadowDumper\ShadowDumper\ShadowDumper\x64\Release\unhook.obj

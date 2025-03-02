@@ -9,8 +9,11 @@
 // Declaration of unhook function
 extern bool sysMDWD();
 extern bool simpleMDWD();
-extern bool callbacksMDWD();
+extern bool callbacksMDWD(bool encrypt = false);
+extern bool reflectDump(bool enc = false);
+extern bool DecryptDumpFile(LPCWSTR input, LPCWSTR output);
 extern bool syscallsNative();
+
 
 #define STATUS_SUCCESS 0
 #define OBJ_CASE_INSENSITIVE 0x00000040L

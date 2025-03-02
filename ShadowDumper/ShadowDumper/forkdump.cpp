@@ -73,7 +73,7 @@ BOOL CALLBACK mCallback(
 	return TRUE;
 }
 
-bool reflectDump()
+bool reflectDump(bool enc = false)
 {
 	int returnCode;
 	HANDLE dumpFile = NULL;
@@ -147,6 +147,15 @@ bool reflectDump()
 		}
 
 		printf("Successfully created dump of the forked process \n");
+
+		if (enc) {
+			// Encryption logic here
+			std::cout << "Encrypting the dump data before writing on disk.\n";
+			Encrypt(dBuf, bRead);
+		}
+		else {
+			std::cout << "Proceeding without encryption..." << std::endl;
+		}
 
 		std::string dumpFileName = "C:\\Users\\Public\\panda.raw";
 

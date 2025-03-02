@@ -40,15 +40,28 @@ To run ShadowDumper, execute the compiled binary from the powershell.
   <img src="ShadowDumper/Assets/display.png" alt="Help" width="600"/>
 </p>
 
+**Default Mode (V2.0)**
+- No Parameter Provided: Show the user friendly console with multiple options to execute
+<p align="center">
+  <img src="ShadowDumper/Assets/displayv2.png" alt="Help" width="600"/>
+</p>
+
+
 **CommandLine Mode (V1.0)**
 - Parameter: -h: Displays a help menu with all available options.
 <p align="center">
   <img src="ShadowDumper/Assets/help.png" alt="Help" width="600"/>
 </p>
 
+**CommandLine Mode (V2.0)**
+- Parameter: -h: Displays a help menu with all available options.
+<p align="center">
+  <img src="ShadowDumper/Assets/helpv2.png" alt="Help" width="600"/>
+</p>
+
 ```cpp
   ShadowDumper.exe
-    - Parameter: 1: To dump lsass memory using unhooking technique to inject modified mimikatz binary.
+    - Parameter: 1: To dump lsass memory using unhooking technique to inject modified mimikatz binary [Token Elevation, SAM Dumping, Vault Credentials, Lsass Hashes Dumping].
 
   ShadowDumper.exe
     - Parameter: 2:  To dump lsass memory using unhooking technique to inject binary using direct syscalls with MDWD.
@@ -57,16 +70,19 @@ To run ShadowDumper, execute the compiled binary from the powershell.
     - Parameter: 3: To dump lsass memory using simple MiniDumpWriteDump API.
 
   ShadowDumper.exe
-    - Parameter: 4: To dump lsass memory using MINIDUMP_CALLBACK_INFORMATION callbacks.
+    - Parameter: 4: To dump lsass memory using MINIDUMP_CALLBACK_INFORMATION callbacks and encrypt the dumps before writing on disk as per your choice.
 
   ShadowDumper.exe
-    - Parameter: 5: To dump lsass memory using process forking technique.
+    - Parameter: 5: To dump lsass memory using process forking technique and encrypt the dumps before writing on disk as per your choice.
 
   ShadowDumper.exe
     - Parameter: 6:  To dump lsass memory using direct syscalls with MiniDumpWriteDump.
 
   ShadowDumper.exe
-    - Parameter: 7:   To dump lsass memory using direct syscalls (native dump with needed streams for parsing offline)
+    - Parameter: 7:   To dump lsass memory using direct syscalls (native dump with needed streams for parsing offline).
+  
+   ShadowDumper.exe
+    - Parameter: 8:   To decrypt the dump file before offline parsing with tools like (mimikatz or pypykatz).
 ```
 
 
@@ -75,11 +91,13 @@ Demonstrates the working of ShadowDumper (V1.0).
 
 ![Demo](ShadowDumper/Assets/D.gif)
 
+Demonstrates the working of ShadowDumper (V1.0).
+
+![Demo](ShadowDumper/Assets/D2.gif)
+
 ## 🔄 Upcoming
 ```cpp
 - Defense Evasion Techniques: Add more advance defense evasion techniques.
-
-- OnDisk Detection: Encrypt dump file before writing on the disk.
 
 - Exfiltrate: Exfiltrate dump file over C2 server.
 

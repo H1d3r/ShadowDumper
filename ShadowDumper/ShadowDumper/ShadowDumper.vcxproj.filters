@@ -39,6 +39,9 @@
     <ClCompile Include="nativeDS.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="decrypt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">

