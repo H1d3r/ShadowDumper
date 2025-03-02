@@ -91,7 +91,7 @@ Demonstrates the working of ShadowDumper (V1.0).
 
 ![Demo](ShadowDumper/Assets/D.gif)
 
-Demonstrates the working of ShadowDumper (V1.0).
+Demonstrates the working of ShadowDumper (V2.0).
 
 ![Demo](ShadowDumper/Assets/D2.gif)
 
