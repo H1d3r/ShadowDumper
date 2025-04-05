@@ -97,7 +97,6 @@ Demonstrates the working of ShadowDumper (V2.0).
 
 ## 🔄 Upcoming
 ```cpp
-- Defense Evasion Techniques: Add more advance defense evasion techniques.
 
 - Exfiltrate: Exfiltrate dump file over C2 server.
 
