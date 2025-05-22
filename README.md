@@ -1,4 +1,12 @@
 # ShadowDumper
+<div align="center";">
+    <a href="https://www.paypal.me/OFFPAN" target="_blank" style="margin: 0 15px; display: inline-block;">
+        <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 45px; width: 162px;">
+    </a>
+    <a href="https://www.paypal.me/OFFPAN" target="_blank" style="margin: 0 15px; display: inline-block;">
+        <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="Donate with PayPal" style="height: 45px;">
+    </a>
+       </div>
 <p align="center">
   <img src="ShadowDumper/Assets/main.jpg" alt="Help" width="600"/>
 </p>
